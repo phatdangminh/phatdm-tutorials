@@ -15,33 +15,33 @@ class bcolors:
     UN = '\033[4m'
 
 # Set required default parameters:
-url = 'http://localhost:8069'
+# url = 'http://localhost:8069'
 
 # -User Internal
-username = 'admin'
-password = 'admin'
+# username = 'admin'
+# password = 'admin'
 
 # LOGIN IN ODOO AND GET ACCESS TOKENS
 # -----------------------------------
 # print('\n 1. LOGIN IN ODOO AND GET ACCESS TOKENS:')
 
-r_access_token = requests.get(
-    url + '/api/auth/get_tokens',
-    headers = {'Content-Type': 'text/html; charset=utf-8'},
-    data = json.dumps({
-        'username': username,
-        'password': password,
-        'access_lifetime': 0,
-        'refresh_lifetime': 10,
-    }),
-)
+# r_access_token = requests.get(
+#     url + '/api/auth/get_tokens',
+#     headers = {'Content-Type': 'text/html; charset=utf-8'},
+#     data = json.dumps({
+#         'username': username,
+#         'password': password,
+#         'access_lifetime': 0,
+#         'refresh_lifetime': 10,
+#     }),
+# )
 # res_json = json.dumps(r_access_token.json(), indent=4, sort_keys=True)
 # print(f'\n{bcolors.H} Get Access Token = {bcolors.EN}', res_json)
-access_token = r_access_token.json()['access_token']
+# access_token = r_access_token.json()['access_token']
 # print('\n Acess Token: ', bcolors.OK, access_token, bcolors.EN)
 
 # ====================================================
-print(f'\n {bcolors.IN}========== TEST API ODOO:{bcolors.EN}')
+# print(f'\n {bcolors.IN}========== TEST API ODOO:{bcolors.EN}')
 
 # ============================= [PRODUCT]
 # -- READ ALL --
@@ -435,31 +435,29 @@ print(f'\n {bcolors.IN}========== TEST API ODOO:{bcolors.EN}')
 
 
 # =======================================================================
-# import xmlrpc.client
+import xmlrpc.client
 
 
-# demo_url = 'https://demo.odoo.com/start'
-# info = xmlrpc.client.ServerProxy(demo_url).start()
-# url, db, username, password = info['host'], info['database'], info['user'], info['password']
+demo_url = 'https://demo.odoo.com/start'
+info = xmlrpc.client.ServerProxy(demo_url).start()
+url, db, username, password = info['host'], info['database'], info['user'], info['password']
 
-# common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
-# common.version()
+common = xmlrpc.client.ServerProxy('{}/xmlrpc/2/common'.format(url))
+common.version()
 
-# # {
-# #     "server_version": "13.0",
-# #     "server_version_info": [13, 0, 0, "final", 0],
-# #     "server_serie": "13.0",
-# #     "protocol_version": 1,
-# # }
+# {
+#     "server_version": "13.0",
+#     "server_version_info": [13, 0, 0, "final", 0],
+#     "server_serie": "13.0",
+#     "protocol_version": 1,
+# }
 
-# uid = common.authenticate(db, username, password, {})
+uid = common.authenticate(db, username, password, {})
 
-# print(
-#     'URL:', bcolors.OK, url, bcolors.EN, '|',
-#     'DB Name:', bcolors.IN, db, bcolors.EN, '|',
-#     'Username:', bcolors.WA, username, bcolors.EN, '|',
-#     'Password:', bcolors.WA, password, bcolors.EN,
-# )
+print(
+    'URL:', bcolors.OK, url, bcolors.EN, '|',
+    'DB Name:', bcolors.IN, db, bcolors.EN, '|',
+    'Username:', bcolors.WA, username, bcolors.EN, '|',
+    'Password:', bcolors.WA, password, bcolors.EN,
+)
 # =======================================================================
-
-
