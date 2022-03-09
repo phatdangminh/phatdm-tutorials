@@ -1,10 +1,11 @@
-#include <stdio.h>
+#include <iostream>
 
+using namespace std;
 int main()
 {
-    int age;
-    printf("Enter age\n");
-    scanf("%d", &age);
-    printf("Your age is %d", age);
+    cout << "How to compile your C++ code in Visual Studio Code\n";
+    cout << "https://www.freecodecamp.org/news/how-to-compile-your-c-code-in-visual-studio-code/\n";
+    cout << "Author: FreeCodeCamp";
+
     return 0;
 }
