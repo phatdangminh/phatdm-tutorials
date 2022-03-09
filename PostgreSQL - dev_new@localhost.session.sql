@@ -1,1 +1,5 @@
-SELECT id,login,password FROM res_users WHERE id = 2;
+SELECT id,
+       login,
+       password
+FROM res_users
+WHERE id = 2;
