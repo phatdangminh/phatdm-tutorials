@@ -4,6 +4,7 @@ import pprint
 
 
 print('============= TEST =============')
+print('============= TEST =============')
 
 translator = Translator()
 res = translator.translate('Mitä sinä teet', src='vi')
